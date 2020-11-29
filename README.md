@@ -49,7 +49,7 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [ ] Analytics Page
 
 ## Author
-👤 **Kevin Zhuang**
+👤 **Aryan Pandey**
 * Github: [@centipede13](https://github.com/centipede13)
 
 ## Show your support
