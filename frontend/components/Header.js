@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { APP_NAME } from "../config";
 import { signout, isAuth } from "../actions/auth";
+import NProgress from "nprogress";
 // Do not import "Router" as <--Import {Router} from 'next/router--> !!!
 import Router from "next/router";
 import Link from "next/link";
@@ -8,11 +9,14 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
 } from "reactstrap";
+
+Router.onRouteChangeStart = (url) => NProgress.start();
+Router.onRouteChangeComplete = (url) => NProgress.done();
+Router.onRouteChangeError = (url) => NProgress.done();
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
