@@ -1,5 +1,6 @@
 import Admin from "../../../components/auth/Admin";
 import Category from "../../../components/crud/Category";
+import Tag from "../../../components/crud/Tag";
 import Layout from "../../../components/Layout";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ function CategoryTag() {
               <Category />
             </div>
             <div className="col-md-6">
-              <p>Tags</p>
+              <Tag />
             </div>
           </div>
         </div>
