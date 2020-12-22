@@ -50,12 +50,15 @@ const CreateBlog = ({ router }) => {
     hidePublishButton,
   } = values;
 
+  const token = getCookie("token");
+
   useEffect(() => {
     setValues({ ...values, formData: new FormData() });
     initCategories();
     initTags();
   }, [router]);
 
+  // Categories Initialized
   const initCategories = () => {
     getCategories().then((data) => {
       if (data.error) {
@@ -65,6 +68,8 @@ const CreateBlog = ({ router }) => {
       }
     });
   };
+
+  // Tags Initialized
   const initTags = () => {
     getTags().then((data) => {
       if (data.error) {
@@ -75,9 +80,26 @@ const CreateBlog = ({ router }) => {
     });
   };
 
+  // Publishing Or Saving blog to DB
   const publishBlog = (e) => {
     e.preventDefault();
-    console.log("ready to publish Blog?");
+    // console.log("ready to publish Blog?");
+    createBlog(formData, token).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          title: "",
+          error: "",
+          success: `A new blog titled "${data.title}" is created`,
+        });
+        // Also clears out local storage as it is in sync
+        setBody("");
+        setCategories([]);
+        setTags([]);
+      }
+    });
   };
 
   const handleChange = (name) => (e) => {
@@ -198,18 +220,25 @@ const CreateBlog = ({ router }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-8">
-          {createBlogForm()}
-          <hr />
-          {JSON.stringify(title)}
-          <hr />
-          {JSON.stringify(body)}
-          <hr />
-          {JSON.stringify(categories)}
-          <hr />
-          {JSON.stringify(tags)}
-        </div>
+        <div className="col-md-8">{createBlogForm()}</div>
         <div className="col-md-4">
+          <div>
+            <div className="form-group pb-2">
+              <h5>Featured Image</h5>
+              <hr />
+              <small className="text-muted">Max size: 1mb</small>
+              <br />
+              <label className="btn btn-outline-info">
+                Upload featured image
+                <input
+                  onChange={handleChange("photo")}
+                  type="file"
+                  accept="image/*"
+                  hidden
+                />
+              </label>
+            </div>
+          </div>
           <div>
             <h5>Categories</h5>
             <hr />
