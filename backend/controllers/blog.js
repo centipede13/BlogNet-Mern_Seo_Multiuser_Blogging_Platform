@@ -8,6 +8,8 @@ const _ = require("lodash");
 const { errorHandler } = require("../helpers/dbErrorHandler");
 const fs = require("fs");
 const { smartTrim } = require("../helpers/blog");
+const blog = require("../models/blog");
+const { populate } = require("../models/blog");
 
 exports.create = (req, res) => {
   let form = new formidable.IncomingForm();
@@ -180,6 +182,7 @@ exports.listAllBlogsCategoriesTags = (req, res) => {
 exports.read = (req, res) => {
   const slug = req.params.slug.toLowerCase();
   Blog.findOne({ slug })
+    // .select("-photo")
     .populate("categories", "_id name slug")
     .populate("tags", "_id name slug")
     .populate("postedBy", "_id name username")
@@ -270,4 +273,19 @@ exports.update = (req, res) => {
       });
     });
   });
+};
+
+exports.photo = (req, res) => {
+  const slug = req.params.slug.toLowerCase();
+  Blog.findOne({ slug })
+    .select("photo")
+    .exec((err, blog) => {
+      if (err || !blog) {
+        return res.status(400).json({
+          error: errorHandler(err),
+        });
+      }
+      res.set("Content-type", blog.photo.contentType);
+      return res.send(blog.photo.data);
+    });
 };
