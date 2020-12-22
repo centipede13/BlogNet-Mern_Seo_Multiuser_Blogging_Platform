@@ -32,6 +32,14 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
+            <>
+              <NavItem>
+                <Link href="/blogs">
+                  <NavLink>Blogs</NavLink>
+                </Link>
+              </NavItem>
+            </>
+
             {!isAuth() && (
               <>
                 <NavItem>
@@ -46,7 +54,6 @@ const Header = (props) => {
                 </NavItem>
               </>
             )}
-            {/* {JSON.stringify(isAuth())} */}
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
                 <Link href="/user">
