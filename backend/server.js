@@ -20,7 +20,7 @@ mongoose.connect(process.env.DATABASE_CLOUD, { useNewUrlParser: true, useCreateI
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(cookieParser());
 // Cors
 if (process.env.NODE_ENV == 'development') {
