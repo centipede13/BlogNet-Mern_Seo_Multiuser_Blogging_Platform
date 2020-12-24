@@ -1,4 +1,4 @@
-import "../styles/global.css";
+import "../public/styles/global.css";
 import '.././node_modules/nprogress/nprogress.css'
 
 function MyApp({ Component, pageProps }) {
