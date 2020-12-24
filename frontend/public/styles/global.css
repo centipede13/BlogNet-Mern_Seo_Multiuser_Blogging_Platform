@@ -5,3 +5,9 @@
 .ql-editor {
     min-height: 300px;
 }
+
+.featured-image{
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
