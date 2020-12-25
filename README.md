@@ -21,7 +21,7 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Categories & Tag Api
  - [x] Blog Api
  - [x] Related Blogs Api
- - [ ] Admin Blog update/delete Api
+ - [x] Admin Blog update/delete Api
  - [ ] Categories Tags Seo Update
  - [ ] Blog Search Api
  - [ ] User Public Profile Updated
@@ -41,7 +41,7 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Categories & Tag Pages
  - [x] Blog Page
  - [x] Related Blogs Component
- - [ ] Admin Blog update/delete
+ - [x] Admin Blog update/delete
  - [ ] Blog Search
  - [ ] User Public Profile Updated
  - [ ] Discussion/comments frontend
