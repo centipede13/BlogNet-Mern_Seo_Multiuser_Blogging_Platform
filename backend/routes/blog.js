@@ -8,6 +8,7 @@ const {
   update,
   photo,
   listRelated,
+  listSearch,
 } = require("../controllers/blog");
 const { requireSignin, adminMiddleWare } = require("../controllers/auth");
 const router = express.Router();
@@ -20,5 +21,6 @@ router.delete("/blog/:slug", requireSignin, adminMiddleWare, remove);
 router.put("/blog/:slug", requireSignin, adminMiddleWare, update);
 router.get("/blog/photo/:slug", photo);
 router.post("/blogs/related", listRelated);
+router.get("/blogs/search", listSearch);
 
 module.exports = router;
