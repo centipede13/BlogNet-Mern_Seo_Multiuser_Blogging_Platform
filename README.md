@@ -6,10 +6,10 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
 ## Frontend
 | 🥇 | 🥈 | 
 | :---:         |     :---:      |
-| [**Next.js**<br/> ![Next.js](https://raw.githubusercontent.com/reck1ess/next-realworld-example-app/master/project-logo.png) ![Star](https://img.shields.io/github/stars/reck1ess/next-realworld-example-app.svg?style=social&label=Star) ![Fork](https://img.shields.io/github/forks/reck1ess/next-realworld-example-app.svg?style=social&label=Fork)](https://github.com/reck1ess/next-realworld-example-app)|[**React / Redux**<br/> ![React / Redux](https://raw.githubusercontent.com/gothinkster/react-redux-realworld-example-app/master/project-logo.png) ![Star](https://img.shields.io/github/stars/gothinkster/react-redux-realworld-example-app.svg?style=social&label=Star) ![Fork](https://img.shields.io/github/forks/gothinkster/react-redux-realworld-example-app.svg?style=social&label=Fork)](https://github.com/gothinkster/react-redux-realworld-example-app)
+| [**Next.js**<br/> ![Next.js](https://raw.githubusercontent.com/reck1ess/next-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)|[**React.js**<br/> ![React / Redux](https://raw.githubusercontent.com/gothinkster/react-redux-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
 
 ## Backend
- [**Node / Express**<br/> ![Node / Express](https://raw.githubusercontent.com/gothinkster/node-express-realworld-example-app/master/project-logo.png) ![Star](https://img.shields.io/github/stars/gothinkster/node-express-realworld-example-app.svg?style=social&label=Star) ![Fork](https://img.shields.io/github/forks/gothinkster/node-express-realworld-example-app.svg?style=social&label=Fork)](https://github.com/gothinkster/node-express-realworld-example-app)
+ [**Node / Express**<br/> ![Node / Express](https://raw.githubusercontent.com/gothinkster/node-express-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
 
 ## Implemented
 
