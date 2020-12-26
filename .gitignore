@@ -6,3 +6,6 @@ backend/.env
 frontend/node_modules
 frontend/.next
 frontend/next.config.js
+
+# To DO
+notes.txt
