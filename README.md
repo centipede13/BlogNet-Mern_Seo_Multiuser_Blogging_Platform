@@ -22,7 +22,7 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Blog Api
  - [x] Related Blogs Api
  - [x] Admin Blog update/delete Api
- - [ ] Categories Tags Seo Update
+ - [x] Categories Tags Seo Update
  - [ ] Blog Search Api
  - [ ] User Public Profile Updated
  - [ ] Token Expiry and Discussion/comments 
