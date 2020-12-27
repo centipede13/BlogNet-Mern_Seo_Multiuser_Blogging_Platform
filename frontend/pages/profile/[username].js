@@ -5,7 +5,7 @@ import { userPublicProfile } from "../../actions/user";
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from "../../config";
 import moment from "moment";
 
-const UserProfile = ({ user, blogs }) => {
+const UserProfile = ({ user, blogs, query }) => {
   const showUserBlogs = () => {
     return blogs.map((blog, i) => {
       return (
@@ -18,8 +18,32 @@ const UserProfile = ({ user, blogs }) => {
     });
   };
 
+  const head = () => (
+    <Head>
+      <title>
+        {user.username} | {APP_NAME}
+      </title>
+      <meta name="description" content={`Blogs by ${user.username}`} />
+      <link rel="canonical" href={`${DOMAIN}/profile/${query.username}`} />
+      <meta property="og:title" content={`${user.username}| ${APP_NAME}`} />
+      <meta property="og:description" content={`Blogs by ${user.username}`} />
+      <meta property="og:type" content="webiste" />
+      <meta property="og:url" content={`${DOMAIN}/profile/${query.username}`} />
+      <meta property="og:site_name" content={`${APP_NAME}`} />
+
+      <meta property="og:image" content={`${DOMAIN}/images/seoblog.jpg`} />
+      <meta
+        property="og:image:secure_url"
+        content={`${DOMAIN}/images/seoblog.jpg`}
+      />
+      <meta property="og:image:type" content="image/jpg" />
+      <meta property="fb:app_id" content={`${FB_APP_ID}`} />
+    </Head>
+  );
+
   return (
     <>
+      {head()}
       <Layout>
         <div className="container">
           <div className="row">
@@ -75,7 +99,7 @@ UserProfile.getInitialProps = ({ query }) => {
       console.log(data.error);
     } else {
       console.log(data);
-      return { user: data.user, blogs: data.blogs };
+      return { user: data.user, blogs: data.blogs, query };
     }
   });
 };
