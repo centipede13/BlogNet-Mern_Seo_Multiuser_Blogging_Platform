@@ -4,10 +4,12 @@ const {
   authMiddleWare,
   adminMiddleWare,
 } = require("../controllers/auth");
-const { read, publicProfile } = require("../controllers/user");
+const { read, publicProfile, update, photo } = require("../controllers/user");
 const router = express.Router();
 
 router.get("/profile", requireSignin, authMiddleWare, read);
 router.get("/user/:username", publicProfile);
+router.put("/user/update", requireSignin, authMiddleWare, update);
+router.get("/user/photo/:username", photo);
 
 module.exports = router;
