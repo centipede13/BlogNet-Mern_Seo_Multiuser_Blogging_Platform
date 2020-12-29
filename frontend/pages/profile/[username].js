@@ -50,13 +50,22 @@ const UserProfile = ({ user, blogs, query }) => {
             <div className="col-md-12">
               <div className="card">
                 <div className="card-body">
-                  <h5>{user.name}</h5>
-                  <Link href={`${user.profile}`}>
-                    <a>View Profile</a>
-                  </Link>
-                  <p className="text-muted">
-                    Joined {moment(user.createdAt).fromNow()}
-                  </p>
+                  <div className="row">
+                    <div className="col-md-8">
+                      <h5>{user.name}</h5>
+                      <p className="text-muted">
+                        Joined {moment(user.createdAt).fromNow()}
+                      </p>
+                    </div>
+                    <div className="col-md-4">
+                      <img
+                        src={`${API}/user/photo/${user.username}`}
+                        className="img img-fluid img-thumbnail mb-3"
+                        style={{ maxHeight: "120px", maxWidth: "100%" }}
+                        alt="User Profile Image"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,7 +107,7 @@ UserProfile.getInitialProps = ({ query }) => {
     if (data.error) {
       console.log(data.error);
     } else {
-    //   console.log(data);
+      //   console.log(data);
       return { user: data.user, blogs: data.blogs, query };
     }
   });
