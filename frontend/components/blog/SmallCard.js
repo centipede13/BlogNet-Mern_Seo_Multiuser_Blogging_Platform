@@ -11,7 +11,7 @@ const SmallCard = ({ blog }) => {
           <a>
             <img
               className="img img-fluid"
-              style={{ maxHeight: "auto", width: "100%" }}
+              style={{ height: "250px", width: "100%" }}
               src={`${API}/blog/photo/${blog.slug}`}
               alt={blog.title}
             />
@@ -20,7 +20,7 @@ const SmallCard = ({ blog }) => {
       </section>
 
       <div className="card-body">
-        <section>
+        <section style={{ height: "400px" }}>
           <Link href={`/blogs/${blog.slug}`}>
             <a>
               <h5 className="card-title">{blog.title}</h5>
