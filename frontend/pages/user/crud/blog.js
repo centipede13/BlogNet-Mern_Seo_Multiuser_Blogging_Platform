@@ -1,9 +1,9 @@
+import Layout from "../../../components/Layout";
 import Private from "../../../components/auth/Private";
 import BlogCreate from "../../../components/crud/BlogCreate";
-import Layout from "../../../components/Layout";
 import Link from "next/link";
 
-function CreateBlog() {
+const CreateBlog = () => {
   return (
     <Layout>
       <Private>
@@ -20,6 +20,6 @@ function CreateBlog() {
       </Private>
     </Layout>
   );
-}
+};
 
 export default CreateBlog;

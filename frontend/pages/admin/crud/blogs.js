@@ -1,9 +1,9 @@
+import Layout from "../../../components/Layout";
 import Admin from "../../../components/auth/Admin";
 import BlogRead from "../../../components/crud/BlogRead";
-import Layout from "../../../components/Layout";
 import Link from "next/link";
 
-function Blog() {
+const Blog = () => {
   return (
     <Layout>
       <Admin>
@@ -20,6 +20,6 @@ function Blog() {
       </Admin>
     </Layout>
   );
-}
+};
 
 export default Blog;
