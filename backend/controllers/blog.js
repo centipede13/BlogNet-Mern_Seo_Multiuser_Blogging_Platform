@@ -341,7 +341,11 @@ exports.listByUser = (req, res) => {
         error: errorHandler(err),
       });
     }
+<<<<<<< HEAD
     let userId = user._id;
+=======
+    let userId = User._id;
+>>>>>>> 2fc60b51b0d2bf62b343771bf7c9a3c7399cd420
     Blog.find({ postedBy: userId })
       .populate("categories", "_id name slug")
       .populate("tags", "_id name slug")
