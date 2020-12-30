@@ -114,11 +114,7 @@ exports.adminMiddleWare = (req, res, next) => {
 
 exports.canUpdateDeleteBlog = (req, res, next) => {
   const slug = req.params.slug.toLowerCase();
-<<<<<<< HEAD
   Blog.findOne({ slug }).exec((err, data) => {
-=======
-  blog.findOne({ slug }).exec((err, data) => {
->>>>>>> 2fc60b51b0d2bf62b343771bf7c9a3c7399cd420
     if (err) {
       return res.status(400).json({
         error: errorHandler(err),
