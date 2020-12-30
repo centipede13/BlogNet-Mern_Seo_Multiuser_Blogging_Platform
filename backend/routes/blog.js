@@ -9,11 +9,13 @@ const {
   photo,
   listRelated,
   listSearch,
+  listByUser,
 } = require("../controllers/blog");
 const {
   requireSignin,
   adminMiddleWare,
   authMiddleWare,
+  canUpdateDeleteBlog,
 } = require("../controllers/auth");
 const router = express.Router();
 
@@ -30,7 +32,20 @@ router.get("/blogs/search", listSearch);
 
 // For normal user
 router.post("/user/blog", requireSignin, authMiddleWare, create);
-router.delete("/user/blog/:slug", requireSignin, authMiddleWare, remove);
-router.put("/user/blog/:slug", requireSignin, authMiddleWare, update);
+router.get("/:username/blogs", listByUser);
+router.delete(
+  "/user/blog/:slug",
+  requireSignin,
+  authMiddleWare,
+  canUpdateDeleteBlog,
+  remove
+);
+router.put(
+  "/user/blog/:slug",
+  requireSignin,
+  authMiddleWare,
+  canUpdateDeleteBlog,
+  update
+);
 
 module.exports = router;
