@@ -56,7 +56,7 @@ const Category = () => {
   };
 
   const deleteCategory = (slug) => {
-    // console.log("delete", slug);
+    // console.log('delete', slug);
     removeCategory(slug, token).then((data) => {
       if (data.error) {
         console.log(data.error);
@@ -75,7 +75,7 @@ const Category = () => {
 
   const clickSubmit = (e) => {
     e.preventDefault();
-    // console.log("Created Category", name);
+    // console.log('create category', name);
     create({ name }, token).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error, success: false });
@@ -83,9 +83,9 @@ const Category = () => {
         setValues({
           ...values,
           error: false,
-          success: true,
+          success: false,
           name: "",
-          // removed: !removed,
+          removed: !removed,
           reload: !reload,
         });
       }
@@ -102,7 +102,6 @@ const Category = () => {
     });
   };
 
-  // Methods For Showing Messages
   const showSuccess = () => {
     if (success) {
       return <p className="text-success">Category is created</p>;
@@ -125,7 +124,7 @@ const Category = () => {
     setValues({ ...values, error: false, success: false, removed: "" });
   };
 
-  const newCategoryForm = () => (
+  const newCategoryFom = () => (
     <form onSubmit={clickSubmit}>
       <div className="form-group">
         <label className="text-muted">Name</label>
@@ -144,13 +143,14 @@ const Category = () => {
       </div>
     </form>
   );
+
   return (
     <>
       {showSuccess()}
       {showError()}
       {showRemoved()}
       <div onMouseMove={mouseMoveHandler}>
-        {newCategoryForm()}
+        {newCategoryFom()}
         {showCategories()}
       </div>
     </>
