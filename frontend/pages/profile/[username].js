@@ -56,12 +56,24 @@ const UserProfile = ({ user, blogs, query }) => {
                       <p className="text-muted">
                         Joined {moment(user.createdAt).fromNow()}
                       </p>
+                      <p
+                        style={{
+                          fontSize: "1.1rem",
+                          fontWeight: "300",
+                          textAlign: "justify",
+                        }}
+                      >
+                        {user.about}
+                      </p>
                     </div>
                     <div className="col-md-4">
                       <img
                         src={`${API}/user/photo/${user.username}`}
-                        className="img img-fluid img-thumbnail mb-3"
-                        style={{ maxHeight: "120px", maxWidth: "100%" }}
+                        className="mx-auto my-auto d-block img img-fluid img-thumbnail mb-3"
+                        style={{
+                          maxHeight: "auto",
+                          maxWidth: "100%",
+                        }}
                         alt="User Profile Image"
                       />
                     </div>
