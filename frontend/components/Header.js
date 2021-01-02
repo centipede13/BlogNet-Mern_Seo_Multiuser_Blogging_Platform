@@ -31,6 +31,7 @@ const Header = (props) => {
           <NavLink className="font-weight-bold text-dark">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
+        {/* <Search /> */}
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <>

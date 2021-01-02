@@ -1,3 +1,17 @@
+:root {
+    --base: #08090a;
+    --base-inverted: #fff;
+    --header-height: 56px
+}
+
+.header__container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: var(--header-height);
+}
+
 #nprogress .bar {
     height: 4px !important;
 }
