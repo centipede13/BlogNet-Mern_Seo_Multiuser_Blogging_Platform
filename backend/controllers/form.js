@@ -28,9 +28,9 @@ exports.contactForm = (req, res) => {
         success: true,
       });
     })
-    .catch((error) => {
-      console.error(error);
-    });
+    // .catch((error) => {
+    //   console.error(error);
+    // });
 };
 
 exports.contactBlogAuthorForm = (req, res) => {
@@ -62,7 +62,7 @@ exports.contactBlogAuthorForm = (req, res) => {
         success: true,
       });
     })
-    .catch((error) => {
-      console.error(error);
-    });
+    // .catch((error) => {
+    //   console.error(error);
+    // });
 };
