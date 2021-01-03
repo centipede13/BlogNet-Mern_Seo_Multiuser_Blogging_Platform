@@ -50,14 +50,17 @@ const ContactForm = ({ authorEmail }) => {
       <div className="alert alert-info">Thank you for contacting us.</div>
     );
 
-  const showErrorMessage = () => (
-    <div
-      className="alert alert-danger"
-      style={{ display: error ? "" : "none" }}
-    >
-      {error}
-    </div>
-  );
+  const showErrorMessage = () =>
+    error ? <div className="alert alert-danger">{error}</div> : "";
+
+  // const showErrorMessage = () => (
+  //   <div
+  //     className="alert alert-danger"
+  //     style={{ display: error ? "" : "none" }}
+  //   >
+  //     {error}
+  //   </div>
+  // );
 
   const contactForm = () => {
     return (

@@ -1,6 +1,7 @@
 import Router from "next/router";
 import { useState, useEffect } from "react";
 import { signin, authenticate, isAuth } from "../../actions/auth";
+import Link from "next/link";
 
 const SigninComponent = () => {
   const [values, setValues] = useState({
@@ -33,7 +34,7 @@ const SigninComponent = () => {
 
         // authenticate user
         authenticate(data, () => {
-          if(isAuth() && isAuth().role === 1){
+          if (isAuth() && isAuth().role === 1) {
             Router.push(`/admin`);
           } else {
             Router.push(`/user`);
@@ -76,9 +77,12 @@ const SigninComponent = () => {
             placeholder="Type your password"
           />
         </div>
-        <div>
+        <div className="pb-2">
           <button className="btn btn-primary">SignIn</button>
         </div>
+        <Link href="/auth/password/forgot">
+          <a>Forgot Password?</a>
+        </Link>
       </form>
     );
   };
