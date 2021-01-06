@@ -16,6 +16,22 @@ export const handleResponse = (response) => {
   }
 };
 
+// Pre-SignUp method
+export const preSignup = (user) => {
+  return fetch(`${API}/pre-signup`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => console.log(error));
+};
+
 // SignUp method
 export const signup = (user) => {
   return fetch(`${API}/signup`, {

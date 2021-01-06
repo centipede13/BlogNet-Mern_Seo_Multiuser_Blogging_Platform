@@ -10,33 +10,110 @@ const sgMail = require("@sendgrid/mail"); // SENDGRID_API_KEY
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const _ = require("lodash");
 
-exports.signup = (req, res) => {
-  User.findOne({ email: req.body.email }).exec((err, user) => {
-    if (user) {
+exports.preSignup = (req, res) => {
+  const { name, email, password } = req.body;
+  User.findOne({ email: email.toLowerCase() }, (err, user) => {
+    if (err) {
       return res.status(400).json({
-        error: "Email is taken.",
+        error: "Email is already taken",
       });
     }
-
-    const { name, email, password } = req.body;
-    let username = shortId.generate();
-    let profile = `${process.env.CLIENT_URL}/profile/${username}`;
-
-    let newUser = new User({ name, email, password, profile, username });
-    newUser.save((err, success) => {
-      if (err) {
-        return res.status(400).json({
-          error: err,
-        });
+    // Generate a JWT token and send to client
+    const token = jwt.sign(
+      { name, email, password },
+      process.env.JWT_ACCOUNT_ACTIVATION,
+      {
+        expiresIn: "10m",
       }
-      // res.json({
-      //     user: success
-      // })
-      res.json({
-        message: "Signup success! Please signin.",
+    );
+
+    // email
+    const emailData = {
+      from: process.env.EMAIL_FROM,
+      to: email, // Enter email taht was verified from sendgrid
+      subject: `Account Activation Link`,
+      html: `
+              <p>Please use the following link to activate your Account:</p>
+              <p>${process.env.CLIENT_URL}/auth/account/activate/${token}</p>
+              <hr />
+              <p>This email may contain sensetive information</p>
+              <p>https://seoblog.com</p>
+          `,
+    };
+
+    sgMail.send(emailData).then((sent) => {
+      return res.json({
+        message: `Email has been sent to ${email}. Follow the instructions to activate your account.`,
       });
     });
   });
+};
+
+// exports.signup = (req, res) => {
+//   User.findOne({ email: req.body.email }).exec((err, user) => {
+//     if (user) {
+//       return res.status(400).json({
+//         error: "Email is taken.",
+//       });
+//     }
+
+//     const { name, email, password } = req.body;
+//     let username = shortId.generate();
+//     let profile = `${process.env.CLIENT_URL}/profile/${username}`;
+
+//     let newUser = new User({ name, email, password, profile, username });
+//     newUser.save((err, success) => {
+//       if (err) {
+//         return res.status(400).json({
+//           error: err,
+//         });
+//       }
+//       // res.json({
+//       //     user: success
+//       // })
+//       res.json({
+//         message: "Signup success! Please signin.",
+//       });
+//     });
+//   });
+// };
+
+exports.signup = (req, res) => {
+  const token = req.body.token;
+  if (token) {
+    jwt.verify(
+      token,
+      process.env.JWT_ACCOUNT_ACTIVATION,
+      function (err, decoded) {
+        if (err) {
+          return res.status(401).json({
+            error: "Expired link. SignUp again.",
+          });
+        }
+        const { name, email, password } = jwt.decode(token);
+        let username = shortId.generate();
+        let profile = `${process.env.CLIENT_URL}/profile/${username}`;
+
+        const user = new User({ name, email, password, profile, username });
+
+        user.save((err, user) => {
+          if (err) {
+            return res.status(401).json({
+              error: errorHandler(err),
+            });
+          }
+          return res.json({
+            message: "SignUp Successs! Please SignIn",
+          });
+        });
+      }
+    );
+  } else {
+    return res.json({
+      message:
+        "Something went wrong. Try again & if the problem persists contact admin",
+    });
+  }
 };
 
 exports.signin = (req, res) => {
