@@ -25,3 +25,10 @@
     max-height: 500px;
     object-fit: cover;
 }
+
+.profile {
+    /* vertical-align: middle; */
+    max-width: 100%;
+    max-height: auto;
+    /* border-radius: 50%; */
+}

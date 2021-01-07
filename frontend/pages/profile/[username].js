@@ -70,11 +70,7 @@ const UserProfile = ({ user, blogs, query }) => {
                     <div className="col-md-4">
                       <img
                         src={`${API}/user/photo/${user.username}`}
-                        className="mx-auto my-auto d-block img img-fluid img-thumbnail mb-3"
-                        style={{
-                          maxHeight: "auto",
-                          maxWidth: "100%",
-                        }}
+                        className="mx-auto my-auto d-block img img-fluid img-thumbnail mb-3 profile"
                         alt="User Profile Image"
                       />
                     </div>
@@ -87,17 +83,29 @@ const UserProfile = ({ user, blogs, query }) => {
         <br />
         <div className="container pb-5">
           <div className="row">
-            <div className="col-md-6">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light">
-                    Recent blogs by {user.name}
-                  </h5>
-                  {showUserBlogs()}
+            <div className="col">
+              <div className="col pb-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light">
+                      Recent blogs by {user.name}
+                    </h5>
+                    {showUserBlogs()}
+                  </div>
+                </div>
+              </div>
+              <div className="col pb-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light">
+                      Followers
+                    </h5>
+                    <p className="lead">Names of profiles follwed by User</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light">

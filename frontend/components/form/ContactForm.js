@@ -73,7 +73,7 @@ const ContactForm = ({ authorEmail }) => {
             className="form-control"
             value={message}
             required
-            rows="10"
+            rows="8"
           ></textarea>
         </div>
 

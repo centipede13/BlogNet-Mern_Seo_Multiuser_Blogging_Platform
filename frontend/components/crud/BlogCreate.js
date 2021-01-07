@@ -99,6 +99,7 @@ const CreateBlog = ({ router }) => {
         setBody("");
         setCategories([]);
         setTags([]);
+        // router.reload();
       }
     });
   };
