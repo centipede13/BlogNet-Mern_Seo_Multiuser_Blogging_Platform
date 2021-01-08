@@ -6,10 +6,10 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
 ## Frontend
 | 🥇 | 🥈 | 
 | :---:         |     :---:      |
-| [**Next.js**<br/> ![Next.js](https://raw.githubusercontent.com/reck1ess/next-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)|[**React.js**<br/> ![React / Redux](https://raw.githubusercontent.com/gothinkster/react-redux-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
+| [**Next.js**<br/> ![Next.js](images/Nextjs-logo.svg.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)|[**React.js**<br/> ![React](images/React-icon.svg.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
 
 ## Backend
- [**Node / Express**<br/> ![Node / Express](https://raw.githubusercontent.com/gothinkster/node-express-realworld-example-app/master/project-logo.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
+ [**Node / Express**<br/> ![Node / Express](images/Node.js_logo.svg.png)](https://github.com/centipede13/BlogNet-NextJS-SEOblog)
 
 ## Implemented
 
