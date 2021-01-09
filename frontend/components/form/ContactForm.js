@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import { emailContactForm } from "../../actions/form";
 
 const ContactForm = ({ authorEmail }) => {
@@ -28,7 +27,7 @@ const ContactForm = ({ authorEmail }) => {
           name: "",
           email: "",
           message: "",
-          buttonText: "Sent",
+          buttonText: "Message Sent",
           success: data.success,
         });
       }
