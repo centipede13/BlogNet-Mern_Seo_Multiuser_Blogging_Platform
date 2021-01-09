@@ -2,11 +2,12 @@ import Router from "next/router";
 import { useState, useEffect } from "react";
 import { signin, authenticate, isAuth } from "../../actions/auth";
 import Link from "next/link";
+import LoginGoogle from "./LoginGoogle";
 
 const SigninComponent = () => {
   const [values, setValues] = useState({
     email: "",
-    password: "ningen13",
+    password: "",
     error: "",
     loading: false,
     message: "",
@@ -92,6 +93,7 @@ const SigninComponent = () => {
       {showError()}
       {showLoading()}
       {showMessage()}
+      <LoginGoogle />
       {showForm && signinForm()}
     </>
   );

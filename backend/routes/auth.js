@@ -7,6 +7,7 @@ const {
   forgotPassword,
   resetPassword,
   preSignup,
+  googleLogin,
 } = require("../controllers/auth");
 const router = express.Router();
 
@@ -35,5 +36,8 @@ router.put(
   runValidation,
   resetPassword
 );
+
+// Google-Login
+router.post("/google-login", googleLogin);
 
 module.exports = router;
