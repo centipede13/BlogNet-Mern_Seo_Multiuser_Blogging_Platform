@@ -30,7 +30,6 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Password forgot/reset
  - [x] Account Activation by Mail
  - [x] Google Social login
- - [ ] Analytics
 
 ### Frontend
 
@@ -49,7 +48,6 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] pasword reset
  - [x] Account Activation by Mail
  - [x] Google Social login
- - [ ] Analytics Page
 
 ## Author
 👤 **Aryan Pandey**

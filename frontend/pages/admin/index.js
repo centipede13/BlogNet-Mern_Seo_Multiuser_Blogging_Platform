@@ -1,15 +1,16 @@
 import Admin from "../../components/auth/Admin";
 import Layout from "../../components/Layout";
 import Link from "next/link";
+// import AdminDashboard from '../../components/AdminDashboard/AdminDashboard'
 
 function AdminIndex() {
   return (
     <Layout>
       <Admin>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
-            <div className="col-md-12 pt-5 pb-5">
-              <h2>Admin DashBoard</h2>
+            <div className="form_banner col-md-12 pt-5 pb-5">
+              <h2 className="form_title">Admin DashBoard</h2>
             </div>
             <div className="col-md-4">
               <ul className="list-group">
@@ -40,9 +41,29 @@ function AdminIndex() {
                 </li>
               </ul>
             </div>
-            <div className="col-md-8">Right</div>
+          </div>
+          <div className="card">
+            <div className="row">
+              <div className="col-md-4">
+                <section>
+                  <img
+                    className="img img-fluid icon"
+                    src="/images/dashboard-icons/category.svg"
+                    alt="Create Category"
+                  />
+                </section>
+              </div>
+              <div className="col-md-8">
+                <section>
+                  <Link href="/admin/crud/category-tag">
+                    <a>Create Category</a>
+                  </Link>
+                </section>
+              </div>
+            </div>
           </div>
         </div>
+        {/* <AdminDashboard /> */}
       </Admin>
     </Layout>
   );

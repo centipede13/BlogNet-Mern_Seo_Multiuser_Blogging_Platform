@@ -1,0 +1,23 @@
+.footer {
+	margin-top: 6rem;
+	width: 100%;
+	padding: 3rem 0;
+	border-top: 0.1rem solid var(--mainGrey);
+}
+
+.footer__copyright {
+	text-align: center;
+}
+
+.footer__copyright p {
+	font-size: 1.4rem;
+}
+
+.footer__text-and-author {
+	margin: 0;
+}
+
+.footer__author {
+	color: var(--primaryColor);
+	font-weight: 600;
+}
