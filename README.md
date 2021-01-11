@@ -49,6 +49,9 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Account Activation by Mail
  - [x] Google Social login
 
+### ToDO:
+ - [ ] Improve look and feel of blog
+
 ## Author
 👤 **Aryan Pandey**
 * Github: [@centipede13](https://github.com/centipede13)
