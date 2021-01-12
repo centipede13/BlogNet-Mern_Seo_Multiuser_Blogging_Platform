@@ -1,4 +1,6 @@
-﻿![BlogNet](images/blogLogo.png)
+﻿<p align="center">
+  <img width="200" height="200" src="images/blogLogo.png">
+</p>
 
 # BlogNet: A SEO friendly blog made with NodeJS, ReactJS , NextJS and MongoDB
 
