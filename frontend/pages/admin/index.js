@@ -1,13 +1,13 @@
 import Admin from "../../components/auth/Admin";
 import Layout from "../../components/Layout";
-import Link from "next/link";
-// import AdminDashboard from '../../components/AdminDashboard/AdminDashboard'
+// import Link from "next/link";
+import AdminDashboard from '../../components/AdminDashboard/AdminDashboard'
 
 function AdminIndex() {
   return (
     <Layout>
       <Admin>
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="form_banner col-md-12 pt-5 pb-5">
               <h2 className="form_title">Admin DashBoard</h2>
@@ -62,8 +62,8 @@ function AdminIndex() {
               </div>
             </div>
           </div>
-        </div>
-        {/* <AdminDashboard /> */}
+        </div> */}
+        <AdminDashboard />
       </Admin>
     </Layout>
   );

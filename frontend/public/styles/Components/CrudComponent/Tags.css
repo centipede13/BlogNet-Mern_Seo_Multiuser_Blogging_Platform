@@ -1,0 +1,62 @@
+.tags-crud__create-tag-btn {
+	font-size: 1.7rem;
+	margin-top: -1rem;
+	border: none;
+	border-radius: .8rem;
+	padding: 1rem 2.2rem;
+	transition: var(--mainTransition);
+	background-color: var(--primaryColor);
+	color: var(--mainWhite);
+}
+
+@media only screen and (max-width: 576px) {
+	.tags-crud__create-tag-btn {
+		font-size: 1.5rem;
+		width: 100%;
+	}
+}
+
+.tags-crud__create-tag-btn:hover {
+	background-color: var(--secondaryColor);
+	cursor: pointer;
+}
+
+.tags-crud__list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-top: 3rem;
+	border: 0.1rem solid var(--mainGrey);
+	border-radius: .8rem;
+	padding: 3rem;
+}
+
+@media only screen and (max-width: 576px) {
+	.tags-crud__list {
+		grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+		padding: 1rem;
+	}
+}
+
+.tags-crud__list--tag-btn {
+	font-size: 1.4rem;
+	border: none;
+	border-radius: .8rem;
+	border: 0.2rem solid var(--mainGrey);
+	padding: 1rem 2.2rem;
+	background-color: var(--mainWhite);
+	color: var(--mainBlack);
+	transition: var(--mainTransition);
+}
+
+@media only screen and (max-width: 576px) {
+	.tags-crud__list--tag-btn {
+		font-size: 1.3rem;
+	}
+}
+
+.tags-crud__list--tag-btn:hover {
+	background-color: var(--secondaryColor);
+	border: 0.2rem solid var(--secondaryColor);
+	cursor: pointer;
+}

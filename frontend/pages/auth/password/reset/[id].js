@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Layout from "../../../../components/Layout";
 import { withRouter } from "next/router";
+import Layout from "../../../../components/Layout";
+import PasswordReset from "../../../../components/auth/PasswordReset/PasswordReset";
 import { resetPassword } from "../../../../actions/auth";
 
 const ResetPassword = ({ router }) => {
@@ -39,40 +40,51 @@ const ResetPassword = ({ router }) => {
     });
   };
 
-  const passwordResetForm = () => (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group pt-5">
-        <input
-          type="password"
-          onChange={(e) =>
-            setValues({ ...values, newPassword: e.target.value })
-          }
-          className="form-control"
-          value={newPassword}
-          placeholder="Type new password"
-          required
-        />
-      </div>
-      <div>
-        <button className="btn btn-primary">Change password</button>
-      </div>
-    </form>
-  );
+  const handleInputChange = (value) => (event) => {
+    setValues({ ...values, newPassword: event.target.value });
+  };
 
-  const showError = () =>
-    error ? <div className="alert alert-danger">{error}</div> : "";
-  const showMessage = () =>
-    message ? <div className="alert alert-success">{message}</div> : "";
+  // const passwordResetForm = () => (
+  //   <form onSubmit={handleSubmit}>
+  //     <div className="form-group pt-5">
+  //       <input
+  //         type="password"
+  //         onChange={(e) =>
+  //           setValues({ ...values, newPassword: e.target.value })
+  //         }
+  //         className="form-control"
+  //         value={newPassword}
+  //         placeholder="Type new password"
+  //         required
+  //       />
+  //     </div>
+  //     <div>
+  //       <button className="btn btn-primary">Change password</button>
+  //     </div>
+  //   </form>
+  // );
+
+  const showErrorMessage = () =>
+    error ? <div className="password-reset__error">{error}</div> : "";
+  const showSuccessMessage = () =>
+    message ? <div className="password-reset__success">{message}</div> : "";
 
   return (
     <Layout>
-      <div className="container">
+      {/* <div className="container">
         <h2>Reset password</h2>
         <hr />
-        {showError()}
-        {showMessage()}
-        {showForm && passwordResetForm()}
-      </div>
+        {showErrorMessage()}
+        {showSuccessMessage()}
+        {passwordResetForm()}
+      </div> */}
+      <PasswordReset
+        newPassword={newPassword}
+        showSuccessMessage={showSuccessMessage}
+        showErrorMessage={showErrorMessage}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+      />
     </Layout>
   );
 };

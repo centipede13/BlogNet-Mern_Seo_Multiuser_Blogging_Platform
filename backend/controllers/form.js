@@ -8,7 +8,7 @@ exports.contactForm = (req, res) => {
   const emailData = {
     to: process.env.EMAIL_TO,
     from: email, // Enter email taht was verified from sendgrid
-    subject: `Contact form - ${process.env.APP_NAME}`,
+    subject: `${process.env.APP_NAME}`,
     text: `Email received from contact from \n Sender name: ${name} \n Sender email: ${email} \n Sender message: ${message}`,
     html: `
             <h4>Email received from contact form:</h4>
@@ -28,9 +28,18 @@ exports.contactForm = (req, res) => {
         success: true,
       });
     })
-    // .catch((error) => {
-    //   console.error(error);
-    // });
+    .catch((error) => {
+      console.error(error);
+      if (error.response) {
+        // Extract error msg
+        const { message, code, response } = error;
+
+        // Extract response msg
+        const { headers, body } = response;
+
+        console.error(body);
+      }
+    });
 };
 
 exports.contactBlogAuthorForm = (req, res) => {
@@ -62,7 +71,16 @@ exports.contactBlogAuthorForm = (req, res) => {
         success: true,
       });
     })
-    // .catch((error) => {
-    //   console.error(error);
-    // });
+    .catch((error) => {
+      console.error(error);
+      if (error.response) {
+        // Extract error msg
+        const { message, code, response } = error;
+
+        // Extract response msg
+        const { headers, body } = response;
+
+        console.error(body);
+      }
+    });
 };

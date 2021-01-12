@@ -1,0 +1,214 @@
+/* Backdrop */
+
+.backdrop {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 2000;
+}
+
+/* ToolBar */
+
+.toolbar {
+	position: fixed;
+	padding: 0 5px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--mainWhite);
+	border-bottom: 0.1rem solid var(--mainGrey);
+	height: 66px;
+	z-index: 1000;
+}
+
+.toolbar .toolbar-wrapper {
+	max-width: 104rem;
+	margin: auto;
+	height: 100%;
+}
+
+.toolbar .toolbar__navigation {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.toolbar .toolbar__logo a {
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-family: "Nunito";
+	font-weight: 900;
+	color: var(--mainBlack);
+	padding: 6px 6px 6px 0;
+	letter-spacing: 2.3px;
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+}
+
+.toolbar .toolbar__logo a span {
+	color: var(--mainBlack);
+	color: var(--primaryColor);
+}
+
+.toolbar .toolbar__logo .logo {
+	font-size: 3rem;
+	margin-right: 0.5rem;
+}
+
+.toolbar .spacer {
+	flex: 1;
+}
+
+.toolbar .toolbar_navigation-items ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.toolbar .toolbar_navigation-items ul li {
+	padding-left: 1.7rem;
+	display: flex;
+	align-self: center;
+}
+
+.toolbar .toolbar_navigation-items ul a {
+	font-family: "Nunito", sans-serif;
+	color: var(--darkGrey);
+	position: relative;
+	letter-spacing: 1.2px;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.toolbar .toolbar_navigation-items ul a:hover, .toolbar .toolbar_navigation-items ul a:active {
+	color: var(--primaryColor);
+}
+
+@media (max-width: 1200px) {
+	.toolbar-wrapper {
+		padding: 0 15px;
+	}
+}
+
+@media (max-width: 900px) {
+	.toolbar {
+		height: 66px;
+	}
+
+	.toolbar .toolbar_navigation-items {
+		display: none;
+	}
+
+	.toolbar .toolbar-wrapper {
+		padding: 0 15px;
+	}
+
+	.toolbar .toolbar__logo a {
+		width: 100px;
+		font-size: 2rem !important;
+		width: 100%;
+	}
+}
+
+@media (min-width: 900px) {
+	.toolbar__toggle-button {
+		display: none;
+	}
+
+	.toolbar__logo {
+		margin-left: 0;
+	}
+}
+
+/* SideDrawer */
+
+.side-drawer {
+	height: 100%;
+	background: var(--mainWhite);
+	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 70vw;
+	max-width: 400px;
+	z-index: 200000000;
+	transform: translateX(-100%);
+	transition: transform 0.4s ease-out;
+	overflow-y: scroll;
+}
+
+.side-drawer.open {
+	transform: translateX(0);
+}
+
+.side-drawer ul {
+	padding: 0;
+	margin-top: 26px;
+	height: 100%;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+}
+
+.side-drawer ul li {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.side-drawer ul li:last-child {
+	border-bottom: none;
+}
+
+.side-drawer ul li a {
+	font-family: "Nunito", sans-serif;
+	font-size: 1.6rem;
+	color: #000000;
+	text-decoration: none;
+	display: block;
+	padding: 2.2rem 0;
+	letter-spacing: 1.2px;
+}
+
+@media (min-width: 900px) {
+	.side-drawer {
+		display: none;
+	}
+}
+
+/* Drawer Toggle Button */
+
+.toggle-button {
+	padding: 5px 0;
+	display: inline-block;
+	cursor: pointer;
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+	width: 22px;
+	height: 3px;
+	background-color: #333;
+	margin: 3px 0;
+	transition: 0.3s;
+  }
+  
+  .change .bar1 {
+	transform: rotate(-45deg) translate(-4px, 6px);
+  }
+  
+  .change .bar2 {
+	opacity: 0;
+  }
+  
+  .change .bar3 {
+	transform: rotate(45deg) translate(-2.5px, -4.5px);
+  }

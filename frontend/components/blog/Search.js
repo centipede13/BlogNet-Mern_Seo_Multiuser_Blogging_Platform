@@ -1,5 +1,4 @@
 import Link from "next/link";
-import renderHTML from "react-render-html";
 import { useState, useEffect } from "react";
 import { listSearch } from "../../actions/blog";
 
@@ -26,7 +25,6 @@ const Search = () => {
   };
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     setValues({
       ...values,
       search: e.target.value,
@@ -37,30 +35,50 @@ const Search = () => {
 
   const searchBlogs = (results = []) => {
     return (
-      <div className="jumbotron bg-white">
-        {message && <p className="pt-4 text-muted font-italic">{message}</p>}
+      <ul className="search__list-group">
+        {results.map((blog) => (
+          <Link
+            href={`/blogs/${blog.slug}`}
+            key={blog._id}
+            className="search__link"
+          >
+            <a className="search__link">
+              <li className="search__list-group-item" key={blog._id}>
+                {blog.title}
+              </li>
+            </a>
+          </Link>
+        ))}
+        {message ? (
+          <li className="search__list-group-item search__list-group-item__message">
+            {message}
+          </li>
+        ) : null}
+      </ul>
+      // <div className="jumbotron bg-white">
+      //   {message && <p className="pt-4 text-muted font-italic">{message}</p>}
 
-        {results.map((blog, i) => {
-          return (
-            <div key={i}>
-              <Link href={`/blogs/${blog.slug}`}>
-                <a className="text-primary">{blog.title}</a>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+      //   {results.map((blog, i) => {
+      //     return (
+      //       <div key={i}>
+      //         <Link href={`/blogs/${blog.slug}`}>
+      //           <a className="text-primary">{blog.title}</a>
+      //         </Link>
+      //       </div>
+      //     );
+      //   })}
+      // </div>
     );
   };
 
   const searchForm = () => (
-    <form onSubmit={searchSubmit}>
-      <div className="row">
+    <form onSubmit={searchSubmit} className="search">
+      {/* <div className="row">
         <div className="col-md-8">
           <input
             type="search"
             className="form-control"
-            placeholder="search blogs"
+            placeholder="Search..."
             onChange={handleChange}
           />
         </div>
@@ -69,19 +87,40 @@ const Search = () => {
             Search
           </button>
         </div>
-      </div>
+      </div> */}
+      <input
+        type="search"
+        className="search__input-bar"
+        placeholder="Search ..."
+        onChange={handleChange}
+      />
+      {/* <div class="input-group-append">
+          <button className="btn btn-outline-secondary" type="submit">
+            Search
+          </button>
+        </div> */}
     </form>
   );
 
   return (
-    <div className="container-fluid">
-      <div className="pt-3 pb-5">{searchForm()}</div>
-      {searched && (
-        <div style={{ marginTop: "-120px", marginBottom: "-80px" }}>
-          {searchBlogs(results)}
-        </div>
-      )}
-    </div>
+    <form onSubmit={searchSubmit} className="search">
+      <input
+        type="search"
+        className="search__input-bar"
+        placeholder="Search ..."
+        onChange={handleChange}
+      />
+      {searched && searchBlogs(results)}
+    </form>
+
+    // <div className="container-fluid">
+    //   {searchForm()}
+    //   {searched && (
+    //     <div style={{ marginTop: "-120px", marginBottom: "-80px" }}>
+    //       {searchBlogs(results)}
+    //     </div>
+    //   )}
+    // </div>
   );
 };
 

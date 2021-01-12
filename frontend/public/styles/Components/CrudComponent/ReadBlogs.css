@@ -1,0 +1,118 @@
+/* ReadBlogs */
+
+.read-blogs {
+	grid-column: center-start / center-end;
+}
+
+@media only screen and (max-width: 768px) {
+	.read-blogs {
+		grid-column: full-start / full-end;
+		margin: 0 2rem;
+	}
+}
+
+.read-blogs__banner {
+	display: grid;
+	grid-template-rows: repeat(3, 6rem);
+	margin-top: 2rem;
+	border-radius: 1rem;
+	background-color: var(--primaryColor);
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blogs__banner {
+		grid-template-rows: repeat(3, 4rem);
+	}
+}
+
+.read-blogs__title {
+	grid-row: 2;
+	justify-self: center;
+	align-self: center;
+	font-size: 3.5rem;
+	color: var(--mainWhite);
+	margin: 0;
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blogs__title {
+		font-size: 3rem;
+	}
+}
+
+/* ReadBlogsCard */
+
+.read-blog-card {
+	margin-top: 2rem;
+	padding: 3rem;
+	border: 0.1rem solid var(--mainGrey);
+	border-radius: 1rem;
+	text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blog-card {
+		padding: 1rem;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blog-card__blog-title {
+		font-size: 2rem;
+		padding: 1rem 0;
+	}
+}
+
+.read-blog-card__posted-by, .read-blog-card__published-on {
+	font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blog-card__posted-by, .read-blog-card__published-on {
+		font-size: 1.4rem;
+	}
+}
+
+.read-blog-card__posted-by span {
+	color: var(--primaryColor);
+}
+
+.read-blog-card__buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.read-blog-card__update-btn, .read-blog-card__delete-btn {
+	padding: .6rem 2rem;
+	color: var(--mainWhite);
+	margin: 1rem;
+	border-radius: .5rem;
+	font-family: "Nunito", sans-serif;
+}
+
+.read-blog-card__update-btn {
+	font-size: 1.8rem;
+	background-color: var(--primaryColor);
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blog-card__update-btn {
+		font-size: 1.4rem;
+	}
+}
+
+.read-blog-card__delete-btn {
+	font-size: 1.7rem;
+	background-color: #e43434;
+	border: none;
+}
+
+@media only screen and (max-width: 576px) {
+	.read-blog-card__delete-btn {
+		font-size: 1.3rem;
+	}
+}
+
+.read-blog-card__delete-btn:hover {
+	cursor: pointer;
+}

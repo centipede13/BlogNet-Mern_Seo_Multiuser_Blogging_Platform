@@ -1,0 +1,151 @@
+.create-blog {
+	grid-column: center-start / center-end;
+	margin: 5rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.create-blog {
+		grid-column: full-start / full-end;
+		margin: 0 2rem;
+	}
+}
+
+.create-blog__title {
+	font-size: 3.2rem;
+	margin: 4rem 0;
+}
+
+@media only screen and (max-width: 576px) {
+	.create-blog__title {
+		font-size: 3rem;
+	}
+}
+
+.create-blog__wrapper {
+	display: grid;
+	grid-template-columns: 1fr 25rem;
+	grid-column-gap: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+	.create-blog__wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+
+.create-blog__categories, .create-blog__tags {
+	padding: 2rem;
+	border: 0.1rem solid var(--mainGrey);
+	border-radius: 1rem;
+	margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 576px) {
+	.create-blog__categories, .create-blog__tags {
+		margin-top: 5.5rem;
+		margin-bottom: 0;
+		padding: 1.5rem;
+	}
+}
+
+.create-blog__publish-btn {
+	font-size: 1.6rem;
+	margin-bottom: 3rem;
+	border: none;
+	border-radius: 0.8rem;
+	padding: 1.1rem 2rem;
+	transition: var(--mainTransition);
+	background-color: var(--primaryColor);
+	color: var(--mainWhite);
+}
+
+.create-blog__publish-btn:hover {
+	background-color: var(--secondaryColor);
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+	.create-blog__featured-image {
+		margin-top: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.create-blog__featured-image-title, .create-blog__categories-title, .create-blog__tags-title {
+		font-size: 2.2rem;
+	}
+}
+
+.create-blog__upload-img-btn {
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 0.8rem;
+	padding: 1.1rem 2rem;
+	transition: var(--mainTransition);
+	background-color: var(--primaryColor);
+	color: var(--mainWhite);
+}
+
+.create-blog__upload-img-btn:hover {
+	background-color: var(--secondaryColor);
+	cursor: pointer;
+}
+
+.create-blog__img-size-info {
+	margin-left: 1rem;
+	font-size: 1.4rem;
+}
+
+.create-blog ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.create-blog ul li {
+	display: grid;
+	grid-template-columns: 3rem 1fr;
+	margin-bottom: 0.4rem;
+	font-family: 'Nunito', sans-serif;
+}
+
+@media only screen and (max-width: 576px) {
+	.create-blog ul li {
+		font-size: 1.6rem;
+	}
+}
+
+.create-blog input[type='checkbox'] {
+	align-self: center;
+	height: 18px;
+	width: 18px;
+}
+
+/*** React Quill styles ***/
+.quill .ql-container {
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	background: #fefcfc;
+}
+
+/* Snow Theme */
+.quill .ql-snow.ql-toolbar {
+	display: block;
+	background: #eaecec;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+}
+
+/* Bubble Theme */
+.quill .ql-bubble .ql-editor {
+	border: 1px solid #ecebeb;
+	border-radius: 0.5em;
+}
+
+.quill .ql-editor {
+	min-height: 18em;
+}
+
+.themeSwitcher {
+	margin-top: 0.5em;
+	font-size: small;
+}

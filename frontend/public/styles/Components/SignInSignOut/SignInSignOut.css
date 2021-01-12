@@ -1,0 +1,168 @@
+/* SignIn Component */
+
+.signin_form {
+	grid-column: center-start / center-end;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+	min-height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+	.signin_form {
+		grid-column: full-start / full-end;
+		margin-top: 2rem;
+		padding: 0 2rem;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.signin_form__wrapper {
+		width: 100vw;
+	}
+}
+
+.signin_form__title {
+	margin-bottom: 3rem;
+	font-size: 4rem;
+	color: var(--primaryColor);
+	text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+	.signin_form__title {
+		font-size: 3.2rem;
+	}
+}
+
+.signin_form__signin-btn {
+	margin-bottom: 2rem;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 0.8rem;
+	width: 100%;
+	padding: 1.2rem 2.2rem;
+	transition: var(--mainTransition);
+	background-color: var(--primaryColor);
+	color: var(--mainWhite);
+}
+
+.signin_form__signin-btn:hover {
+	background-color: var(--secondaryColor);
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+	.signin_form__signin-btn {
+		font-size: 1.5rem;
+	}
+}
+
+.signin_form__signin-options {
+	display: grid;
+	justify-items: center;
+}
+
+.signin_form__forgot-password {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.signin_form__forgot-password--link {
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--primaryColor);
+}
+
+.signin_form__toast {
+	font-size: 1.5rem;
+	margin: 0;
+	text-align: center;
+}
+
+.signin_form__notify-message {
+	display: none;
+}
+
+/* SignOut Component */
+
+.signup-form {
+	grid-column: center-start / center-end;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+	min-height: 85vh;
+}
+
+@media only screen and (max-width: 768px) {
+	.signup-form {
+		grid-column: full-start / full-end;
+		margin-top: 2rem;
+		padding: 0 2rem;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.signup-form__wrapper {
+		width: 100vw;
+	}
+}
+
+.signup-form__title {
+	margin-bottom: 3rem;
+	font-size: 4rem;
+	color: var(--primaryColor);
+	text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+	.signup-form__title {
+		font-size: 3.2rem;
+	}
+}
+
+.signup-form__signup-btn {
+	margin-bottom: 2rem;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 0.8rem;
+	width: 100%;
+	padding: 1.2rem 2.2rem;
+	transition: var(--mainTransition);
+	background-color: var(--primaryColor);
+	color: var(--mainWhite);
+}
+
+.signup-form__signup-btn:hover {
+	background-color: var(--secondaryColor);
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+	.signup-form__signup-btn {
+		font-size: 1.5rem;
+	}
+}
+
+.signup-form__signin-options {
+	display: grid;
+	justify-items: center;
+}
+
+.signup-form__messages {
+	display: grid;
+	justify-items: center;
+	margin: 3rem 0;
+	max-width: 40rem;
+}
+
+.signup-form__toast-success-link {
+	color: var(--mainWhite);
+	transition: var(--mainTransition);
+}
+
+.signup-form__toast-success-link:hover {
+	color: var(--mainGrey);
+}

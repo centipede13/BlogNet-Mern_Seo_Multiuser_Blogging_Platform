@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import jwt from "jsonwebtoken";
 import Layout from "../../../../components/Layout";
+import ActivateAccount from "../../../../components/auth/ActivateAccount/ActivateAccount";
 import { withRouter } from "next/router";
+import jwt from "jsonwebtoken";
 import { signup } from "../../../../actions/auth";
 
-const ActivateAccount = ({ router }) => {
+const ActivateAccountPage = ({ router }) => {
   const [values, setValues] = useState({
     name: "",
     token: "",
@@ -46,11 +47,20 @@ const ActivateAccount = ({ router }) => {
     });
   };
 
-  const showLoading = () => (loading ? <h2>Loading...</h2> : "");
+  const showLoading = () =>
+    loading ? <h4 className="text-center">Loading...</h4> : "";
 
   return (
     <Layout>
-      <div className="container">
+      <ActivateAccount
+        name={name}
+        handleSubmit={clickSubmit}
+        showLoading={showLoading}
+        success={success}
+        showButton={showButton}
+        error={error}
+      />
+      {/* <div className="container">
         <h3 className="pb-4">Hey {name}, Ready to activate your account?</h3>
         {showLoading()}
         {error && error}
@@ -61,9 +71,9 @@ const ActivateAccount = ({ router }) => {
             Activate Account
           </button>
         )}
-      </div>
+      </div> */}
     </Layout>
   );
 };
 
-export default withRouter(ActivateAccount);
+export default withRouter(ActivateAccountPage);

@@ -1,0 +1,54 @@
+/* FormInput */
+
+.form-group {
+	position: relative;
+	margin-bottom: 2.5rem;
+}
+
+.form-group__input {
+	background: none;
+	background-color: white;
+	color: var(--darkGrey);
+	font-size: 1.8rem;
+	padding: 1rem 1rem 1rem .5rem;
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: .7rem;
+	padding-left: 1.5rem;
+	border: 0.1rem solid var(--lightGrey);
+}
+
+@media only screen and (min-width: 600px) {
+	.form-group__input {
+		min-width: 40rem;
+	}
+}
+
+.form-group__input:focus {
+	outline-color: var(--primaryColor) !important;
+	border-color: var(--primaryColor);
+}
+
+.form-group__input:focus ~ .form-group__input-label {
+	top: -2.2rem;
+	font-size: 1.4rem;
+	color: var(--primaryColor);
+}
+
+.form-group__input-label {
+	color: var(--lightGrey);
+	font-size: 1.6rem;
+	font-weight: normal;
+	position: absolute !important;
+	pointer-events: none;
+	left: 1.5rem;
+	top: 1rem;
+	transition: 300ms ease all;
+}
+
+.form-group__input-label.shrink {
+	top: -2.2rem;
+	font-size: 1.4rem;
+	color: var(--primaryColor);
+}

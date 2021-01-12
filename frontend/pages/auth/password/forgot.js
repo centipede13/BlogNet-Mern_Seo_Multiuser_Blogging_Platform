@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Layout from "../../../components/Layout";
 import { forgotPassword } from "../../../actions/auth";
+import ForgotPassword from '../../../components/auth/ForgotPassword/ForgotPassword';
 
-const ForgotPassword = () => {
+const ForgotPasswordPage = () => {
   const [values, setValues] = useState({
     email: "",
     message: "",
@@ -12,7 +13,7 @@ const ForgotPassword = () => {
 
   const { email, message, error, showForm } = values;
 
-  const handleChange = (name) => (e) => {
+  const handleInputChange = (name) => (e) => {
     setValues({ ...values, message: "", error: "", [name]: e.target.value });
   };
 
@@ -33,40 +34,47 @@ const ForgotPassword = () => {
     });
   };
 
-  const showError = () =>
-    error ? <div className="alert alert-danger">{error}</div> : "";
-  const showMessage = () =>
-    message ? <div className="alert alert-success">{message}</div> : "";
+  const showErrorMessage = () =>
+    error ? <div className="forgot-password__error">{error}</div> : "";
+  const showSuccessMessage = () =>
+    message ? <div className="forgot-password__success">{message}</div> : "";
 
-  const passwordForgotForm = () => (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group pt-5">
-        <input
-          type="email"
-          onChange={handleChange("email")}
-          className="form-control"
-          value={email}
-          placeholder="Type your email"
-          required
-        />
-      </div>
-      <div>
-        <button className="btn btn-primary">Send password reset link</button>
-      </div>
-    </form>
-  );
+  // const passwordForgotForm = () => (
+  //   <form onSubmit={handleSubmit}>
+  //     <div className="form-group pt-5">
+  //       <input
+  //         type="email"
+  //         onChange={handleChange("email")}
+  //         className="form-control"
+  //         value={email}
+  //         placeholder="Type your email"
+  //         required
+  //       />
+  //     </div>
+  //     <div>
+  //       <button className="btn btn-primary">Send password reset link</button>
+  //     </div>
+  //   </form>
+  // );
 
   return (
     <Layout>
-      <div className="container">
+      {/* <div className="container">
         <h2>Forgot password</h2>
         <hr />
-        {showError()}
-        {showMessage()}
+        {showErrorMessage()}
+        {showSuccessMessage()}
         {showForm && passwordForgotForm()}
-      </div>
+      </div> */}
+      <ForgotPassword
+        email={email}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+        showSuccessMessage={showSuccessMessage}
+        showErrorMessage={showErrorMessage}
+      />
     </Layout>
   );
 };
 
-export default ForgotPassword;
+export default ForgotPasswordPage;

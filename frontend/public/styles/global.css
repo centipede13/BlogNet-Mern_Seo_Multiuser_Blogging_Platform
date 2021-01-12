@@ -1,112 +1,79 @@
-:root {
-    --base: #08090a;
-    --base-inverted: #fff;
-    --header-height: 56px
-}
-
-.header__container {
-    margin: auto;
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: var(--header-height);
-}
-
-#nprogress .bar {
-    height: 4px !important;
-}
-
-.ql-editor {
-    min-height: 300px;
-}
-
-.featured-image{
+/* Make clicks pass-through */
+#nprogress {
+    pointer-events: none;
+  }
+  
+  @media only screen and (max-width: 576px) {
+    #nprogress {
+      display: none;
+    }    
+  }
+  
+  #nprogress .bar {
+    background: #03a87c;
+  
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+  
     width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-}
-
-.profile {
-    /* vertical-align: middle; */
-    max-width: 100%;
-    max-height: auto;
-    /* border-radius: 50%; */
-}
-
-/**
- * card 
- */
-
- .flip {
-    position: relative;
-}
-.flip > .front,
-.flip > .back {
+    height: 2px;
+  }
+  
+  /* Fancy blur effect */
+  #nprogress .peg {
     display: block;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 0.5s;
-    transition-property: transform, opacity;
-}
-.flip > .front {
-    transform: rotateY(0deg);
-}
-.flip > .back {
     position: absolute;
-    opacity: 0;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+    right: 0px;
+    width: 100px;
     height: 100%;
-    transform: rotateY(-180deg);
-}
-.flip:hover > .front {
-    transform: rotateY(180deg);
-}
-.flip:hover > .back {
-    opacity: 1;
-    transform: rotateY(0deg);
-}
-.flip.flip-vertical > .back {
-    transform: rotateX(-180deg);
-}
-.flip.flip-vertical:hover > .front {
-    transform: rotateX(180deg);
-}
-.flip.flip-vertical:hover > .back {
-    transform: rotateX(0deg);
-}
-.flip {
-    position: relative;
-    display: inline-block;
-    margin-right: 2px;
-    margin-bottom: 1em;
-    width: 100%;
-    /*width: 400px;*/
-}
-.flip > .front,
-.flip > .back {
+    box-shadow: 0 0 10px #03a87c, 0 0 5px #0ba889;
+    opacity: 1.0;
+  
+    -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+  }
+  
+  /* Remove these to get rid of the spinner */
+  #nprogress .spinner {
     display: block;
-    color: white;
-    width: inherit;
-    background-size: cover !important;
-    background-position: center !important;
-    height: 220px;
-    padding: 1em 2em;
-    background: #313131;
-    border-radius: 10px;
-}
-.flip > .front p,
-.flip > .back p {
-    font-size: 0.9125rem;
-    line-height: 160%;
-    color: #999;
-}
-.text-shadow {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04),
-        4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04),
-        7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04),
-        0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04),
-        13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04),
-        16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
-        19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
-}
+    position: fixed;
+    z-index: 1031;
+    top: 15px;
+    right: 15px;
+  }
+  
+  /* #nprogress .spinner-icon {
+    margin-top: 5px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border: solid 2px transparent;
+    border-top-color: #03a87c;
+    border-left-color: #03a87c;
+    border-radius: 50%;
+    -webkit-animation: nprogress-spinner 400ms linear infinite;
+            animation: nprogress-spinner 400ms linear infinite;
+  } */
+  
+  .nprogress-custom-parent {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .nprogress-custom-parent #nprogress .spinner,
+  .nprogress-custom-parent #nprogress .bar {
+    position: absolute;
+  }
+  
+  @-webkit-keyframes nprogress-spinner {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
