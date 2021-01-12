@@ -1,4 +1,6 @@
-﻿# BlogNet: A SEO friendly blog made with NodeJS, ReactJS , NextJS and MongoDB
+﻿![BlogNet](images/blogLogo.png)
+
+# BlogNet: A SEO friendly blog made with NodeJS, ReactJS , NextJS and MongoDB
 
 Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.js + MERN stack. It allows the user to register (which would send you a register link) as a new user. As a registered user, you can do the normal CRUD of your blogs if you do decide to publish. You can login as *"normal user"* or as *"admin user"*. It also has the functionality for password reset/recover.
 
