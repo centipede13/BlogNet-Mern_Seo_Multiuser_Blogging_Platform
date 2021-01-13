@@ -28,15 +28,15 @@ const Tag = ({ tag, blogs, query }) => {
 
         <meta
           property="og:image"
-          content={`${DOMAIN}/images/bloggingcoder.jpg`}
+          content={`${DOMAIN}/images/seoblog.jpg`}
         />
         <meta
           property="og:image:secure_url"
-          content={`${DOMAIN}/images/bloggingcoder.jpg`}
+          content={`${DOMAIN}/images/seoblog.jpg`}
         />
         <meta property="og:image:type" content="/image/jpg" />
         <meta property="fb:app_id" content={`${FB_APP_ID}`} />
-        {/* <link rel="shortcut icon" href="../../favicon.ico" /> */}
+        <link rel="shortcut icon" href="images/favicon.ico" />
       </Head>
       <BlogTag tag={tag} blogs={blogs} />
     </Layout>
