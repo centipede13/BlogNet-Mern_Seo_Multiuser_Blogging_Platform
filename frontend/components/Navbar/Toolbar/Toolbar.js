@@ -12,6 +12,10 @@ const Toolbar = ({ isOpen, drawerClickHandler }) => (
         <div className="toolbar__logo">
           <Link href="/">
             <a>
+              <img
+                src="/images/blogLogo.png"
+                alt="blog logo"
+              />
               Blog <span>Net</span>
             </a>
           </Link>

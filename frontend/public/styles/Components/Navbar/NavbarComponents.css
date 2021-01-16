@@ -89,6 +89,13 @@
 
 .toolbar .toolbar_navigation-items ul a:hover, .toolbar .toolbar_navigation-items ul a:active {
 	color: var(--primaryColor);
+	text-shadow: -1px 3px 2px var(--primaryColorLight);
+}
+
+.toolbar img{
+	height: 5rem;
+	width: 5rem;
+	margin-right: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -167,6 +174,10 @@
 	border-bottom: none;
 }
 
+.side-drawer ul li:hover{
+	background-color: var(--primaryColor);
+}
+
 .side-drawer ul li a {
 	font-family: "Nunito", sans-serif;
 	font-size: 1.6rem;
@@ -175,6 +186,10 @@
 	display: block;
 	padding: 2.2rem 0;
 	letter-spacing: 1.2px;
+}
+
+.side-drawer ul li a:hover{
+	color: var(--mainWhite);
 }
 
 @media (min-width: 900px) {

@@ -2,7 +2,8 @@
 	margin-top: 6rem;
 	width: 100%;
 	padding: 3rem 0;
-	border-top: 0.1rem solid var(--mainGrey);
+	border-top: 0.2rem solid var(--mainGrey);
+	background-color: var(--offWhite);
 }
 
 .footer__copyright {
@@ -20,4 +21,8 @@
 .footer__author {
 	color: var(--primaryColor);
 	font-weight: 600;
+}
+
+.footer__author:hover{
+	text-shadow: 5px 5px 4px var(--primaryColorLight);
 }

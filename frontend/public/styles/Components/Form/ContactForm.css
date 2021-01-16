@@ -70,6 +70,12 @@
 	border-radius: 1rem;
 	border: 0.1rem solid var(--mainGrey);
 	padding: 1rem 1.8rem;
+	transition: var(--mainTransition);
+}
+
+.contact-form__contact-options li:hover {
+	background-color: var(--mainGrey);
+	box-shadow: 2px 2px 8px #888888;
 }
 
 .contact-form__contact-options--link {
@@ -117,6 +123,7 @@
 .contact-form__contact-btn:hover {
 	background-color: var(--secondaryColor);
 	cursor: pointer;
+	transform: translateY(-0.25em);
 }
 
 .contact-form__toast-error, .contact-form__toast-success {
