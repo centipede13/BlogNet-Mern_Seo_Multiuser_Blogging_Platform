@@ -150,7 +150,10 @@
 /* BlogCard */
 
 .blog-card {
-	padding: 3rem;
+	padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1.5rem;
 	border: 0.1rem solid var(--mainGrey);
 	border-radius: 1rem;
 	margin-bottom: 2.5rem;
@@ -298,6 +301,77 @@
 	.blog-card__excerpt p {
 		font-size: 1.5rem;
 	}
+}
+
+/* Blog Card Footer */
+
+.blog-card__footer{
+	margin-top: 10px;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.blog-card__footer svg .like-count{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.icon svg {
+    height: 24px;
+    width: 24px;
+    fill: var(--mainBlack);
+}
+
+.like-count{
+	margin-left: 5px;
+	font-size: 15px;
+	color: var(--lightGrey);
+}
+
+@media only screen and (max-width: 350px){
+	.icon svg {
+		height: 24px;
+		width: 24px;
+		fill: var(--mainBlack);
+	}
+	
+	.like-count{
+		margin-left: 5px;
+		font-size: 15px;
+		color: var(--lightGrey);
+	}
+}
+
+@media only screen and (max-width: 576px){
+	.icon svg {
+		height: 24px;
+		width: 24px;
+		fill: var(--mainBlack);
+	}
+	
+	.like-count{
+		margin-left: 5px;
+		font-size: 15px;
+		color: var(--lightGrey);
+	}
+}
+
+@media only screen and (max-width: 850px){
+	.icon svg {
+		height: 24px;
+		width: 24px;
+		fill: var(--mainBlack);
+	}
+	
+	.like-count{
+		margin-left: 5px;
+		font-size: 15px;
+		color: var(--lightGrey);
+	}
+}
+
+hr{
+	margin-top: 5px;
 }
 
 /* LoadMore */
