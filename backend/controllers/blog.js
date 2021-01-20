@@ -143,7 +143,7 @@ exports.listAllBlogsCategoriesTags = (req, res) => {
     .skip(skip)
     .limit(limit)
     .select(
-      "_id title slug excerpt categories tags postedBy createdAt updatedAt"
+      "_id title slug excerpt categories tags postedBy createdAt updatedAt favoritesCount"
     )
     .exec((err, data) => {
       if (err) {
@@ -188,7 +188,7 @@ exports.read = (req, res) => {
     .populate("tags", "_id name slug")
     .populate("postedBy", "_id name username")
     .select(
-      "_id title body slug mtitle mdesc categories tags postedBy createdAt updatedAt"
+      "_id title body slug mtitle mdesc categories tags postedBy createdAt updatedAt favoritesCount"
     )
     .exec((err, data) => {
       if (err) {
@@ -299,7 +299,7 @@ exports.listRelated = (req, res) => {
   Blog.find({ _id: { $ne: _id }, categories: { $in: categories } })
     .limit(limit)
     .populate("postedBy", "_id name username profile")
-    .select("title slug excerpt postedBy createdAt updatedAt")
+    .select("title slug excerpt postedBy createdAt updatedAt favoritesCount")
     .exec((err, blogs) => {
       if (err) {
         return res.status(400).json({
@@ -346,7 +346,7 @@ exports.listByUser = (req, res) => {
       .populate("categories", "_id name slug")
       .populate("tags", "_id name slug")
       .populate("postedBy", "_id name username")
-      .select("_id title slug postedBy createdAt updatedAt")
+      .select("_id title slug postedBy createdAt updatedAt favoritesCount")
       .exec((err, data) => {
         if (err) {
           return res.status(400).json({
