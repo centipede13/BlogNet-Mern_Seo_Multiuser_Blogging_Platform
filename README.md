@@ -53,8 +53,46 @@ Hi! ***BlogNet*** is a Multi User SEO friendly blogging website built with Next.
  - [x] Account Activation by Mail
  - [x] Google Social login
 
-### ToDO:
- - [ ] Improve look and feel of blog
+### Note for .env and next.config.js file
+### .env
+- Create a **.env** file at the root of backend folder
+- add the following fields:
+```sh
+NODE_ENV=development
+APP_NAME="Name Of Your App"
+PORT=8000
+CLIENT_URL=http://localhost:3000
+DATABASE_CLOUD= "MongoDB Connection URL"
+SENDGRID_API_KEY=" "
+EMAIL_TO=" "
+EMAIL_FROM=" "
+JWT_SECRET=" "
+JWT_ACCOUNT_ACTIVATION=" "
+JWT_RESET_PASSWORD=" "
+GOOGLE_CLIENT_ID=" "
+```
+
+### next.config.js
+- Create a **next.config.js** file at the root of frontend folder
+- add the following fields:
+``` sh
+module.exports = {
+  publicRuntimeConfig: {
+    APP_NAME: "App Name",
+    API_DEVELOPMENT: "http://localhost:8000/api", // Backedn Api Link
+    API_PRODUCTION: " ", // enter your production API link
+    PRODUCTION: false,
+    DOMAIN_DEVLOPMENT: "http://localhost:3000",
+    DOMAIN_PRODUCTION: " ", // Domain Name For Production
+    FB_APP_ID: " ",
+    DISQUS_SHORTNAME: " Enter Disque shortname ",
+    GOOGLE_CLIENT_ID:
+      "Enter your google client ID",
+  },
+};
+
+```
+
 
 ## Author
 👤 **Aryan Pandey**
